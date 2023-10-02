@@ -15,9 +15,13 @@ function ListGroup() {
       {items.length === 0 && <p>No item found.</p>}{" "}
       {/* of is one way of if statement too. or {items.length==0? <p>No item found</p>:null} */}
       <ul className="list-group">
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
-            <li className="list-group-item" key={item}>
+            <li
+              className="list-group-item"
+              key={item}
+              onClick={() => console.log(item, index)}
+            >
               {item}
             </li>
           );
